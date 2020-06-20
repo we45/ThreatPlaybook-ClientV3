@@ -63,7 +63,7 @@ playbook apply feature -f <path-to-yaml-file>
 ```
 
 ## TODO Features
-* Get Feature/Abuser Story/Threat Scenario from API
-* Delete features
+* Get Feature/Abuser Story/Threat Scenario from API - Done
+* Delete features - Done
 * Export Features
 * Vulnerability Management Push and Sync Features
