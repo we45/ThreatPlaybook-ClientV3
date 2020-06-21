@@ -87,7 +87,7 @@ func getProject(project string) bool {
 	if (ConfigObj{}) == configValue {
 		log.Fatal("Unable to fetch value from cred file")
 	}
-	url := fmt.Sprintf("http://%s:%d/project/read", configValue.host, configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/project/read", configValue.host, configValue.port)
 
 	getProject := ProjectRequest{
 		Name: project,
@@ -175,7 +175,7 @@ func makeUserStory(yamlFeature Feature, project string) bool {
 	if (ConfigObj{}) == configValue {
 		log.Fatal("Unable to fetch value from cred file")
 	}
-	url := fmt.Sprintf("http://%s:%d/feature/create", configValue.host, configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/feature/create", configValue.host, configValue.port)
 
 	makeFeature := FeatureRequest{
 		Name:        yamlFeature.Name,
@@ -215,7 +215,7 @@ func makeAbuserStoryAndEverythingElse(yamlFeature Feature) []AbuserStoryCreate {
 	if (ConfigObj{}) == configValue {
 		log.Fatal("Unable to fetch value from cred file")
 	}
-	url := fmt.Sprintf("http://%s:%d/abuse-case/create", configValue.host, configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/abuse-case/create", configValue.host, configValue.port)
 
 	if len(yamlFeature.Abuse_cases) == 0 {
 		log.Fatal("There are no abuse cases to be loaded. Exiting...")
@@ -283,8 +283,8 @@ func makeThreatScenarios(singleAbuse AbuserStoryCreate) []ThreatScenarioCreate {
 	if (ConfigObj{}) == configValue {
 		log.Fatal("Unable to fetch value from cred file")
 	}
-	repoURL := fmt.Sprintf("http://%s:%d/scenario/repo/create", configValue.host, configValue.port)
-	inlineURL := fmt.Sprintf("http://%s:%d/scenario/create", configValue.host, configValue.port)
+	repoURL := fmt.Sprintf("http://%s:%d/api/scenario/repo/create", configValue.host, configValue.port)
+	inlineURL := fmt.Sprintf("http://%s:%d/api/scenario/create", configValue.host, configValue.port)
 
 	if len(singleAbuse.ThreatScenarios) == 0 {
 		log.Fatal("There are no threat scenarios to be loaded. Exiting...")
@@ -376,7 +376,7 @@ func makeTestCases(singleScenario ThreatScenarioCreate) []TestCaseCreate {
 	if (ConfigObj{}) == configValue {
 		log.Fatal("Unable to fetch value from cred file")
 	}
-	url := fmt.Sprintf("http://%s:%d/test/create", configValue.host, configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/test/create", configValue.host, configValue.port)
 
 	var testCaseStatus []TestCaseCreate
 

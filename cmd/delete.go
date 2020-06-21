@@ -101,7 +101,7 @@ func deleteFeature(name string, project string, config ConfigObj) {
 	}
 
 	if result == "yes" || result == "y" || result == "YES" {
-		url := fmt.Sprintf("http://%s:%d/delete/feature", config.host, config.port)
+		url := fmt.Sprintf("http://%s:%d/api/delete/feature", config.host, config.port)
 
 		jsonVal := map[string]string{
 			"name":    name,
@@ -137,7 +137,7 @@ func deleteAbuserStory(name string, feature string, config ConfigObj) {
 	}
 
 	if result == "yes" || result == "y" || result == "YES" {
-		url := fmt.Sprintf("http://%s:%d/delete/abuser-story", config.host, config.port)
+		url := fmt.Sprintf("http://%s:%d/api/delete/abuser-story", config.host, config.port)
 
 		jsonVal := map[string]string{
 			"name":    name,
@@ -173,7 +173,7 @@ func deleteThreatScenario(name string, abuserStory string, config ConfigObj) {
 	}
 
 	if result == "yes" || result == "y" || result == "YES" {
-		url := fmt.Sprintf("http://%s:%d/delete/scenario", config.host, config.port)
+		url := fmt.Sprintf("http://%s:%d/api/delete/scenario", config.host, config.port)
 
 		jsonVal := map[string]string{
 			"name":         name,
@@ -209,7 +209,7 @@ func deleteTestCase(name string, scenario string, config ConfigObj) {
 	}
 
 	if result == "yes" || result == "y" || result == "YES" {
-		url := fmt.Sprintf("http://%s:%d/delete/test", config.host, config.port)
+		url := fmt.Sprintf("http://%s:%d/api/delete/test", config.host, config.port)
 
 		jsonVal := map[string]string{
 			"name":     name,
@@ -245,7 +245,7 @@ func deleteProject(name string, config ConfigObj) {
 	}
 
 	if result == "yes" || result == "y" || result == "YES" {
-		url := fmt.Sprintf("http://%s:%d/delete/project", config.host, config.port)
+		url := fmt.Sprintf("http://%s:%d/api/delete/project", config.host, config.port)
 
 		jsonVal := map[string]string{
 			"name": name,

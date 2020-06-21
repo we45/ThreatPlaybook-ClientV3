@@ -73,7 +73,7 @@ func init() {
 }
 
 func cascadeFeatureToScenario(configValue ConfigObj, name string, project string) {
-	url := fmt.Sprintf("http://%s:%d/feature/read", configValue.host, configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/feature/read", configValue.host, configValue.port)
 	getUserStory := GetUserStoryRequest{
 		ShortName: name,
 		Project:   project,
@@ -108,7 +108,7 @@ func outputUserStory(name string, project string, format string, cascade bool) {
 	if (ConfigObj{}) == configValue {
 		log.Fatal("Unable to fetch value from cred file. Have you configured and logged in yet?")
 	}
-	url := fmt.Sprintf("http://%s:%d/feature/read", configValue.host, configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/feature/read", configValue.host, configValue.port)
 
 	getUserStory := GetUserStoryRequest{
 		ShortName: name,

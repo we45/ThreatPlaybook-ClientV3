@@ -1,6 +1,6 @@
 # ThreatPlaybook Client
 
-> version 3.0a1
+> version 3.0.0b1
 
 ## Commands
 

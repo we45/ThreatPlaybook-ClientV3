@@ -175,7 +175,7 @@ func MakeRequest(url string, method string, configValue ConfigObj, request []byt
 
 //GetAbuserStory - Generic Function to get abuser stories for a user story or a specific abuser story
 func GetAbuserStory(params AbuseCaseParams) AbuserStoryGetResponse {
-	url := fmt.Sprintf("http://%s:%d/abuses/read", params.configValue.host, params.configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/abuses/read", params.configValue.host, params.configValue.port)
 	jsonPayload := map[string]string{}
 	if params.UseCase != "" {
 		jsonPayload["user_story"] = params.UseCase
@@ -211,7 +211,7 @@ func GetAbuserStory(params AbuseCaseParams) AbuserStoryGetResponse {
 
 //GetThreatScenario - Generic function to get ThreatScenarios for an Abuser Story or a Specific Threat Scenario
 func GetThreatScenario(abuse_case string, config ConfigObj) ThreatScenarioGetResponse {
-	url := fmt.Sprintf("http://%s:%d/scenarios/read", config.host, config.port)
+	url := fmt.Sprintf("http://%s:%d/api/scenarios/read", config.host, config.port)
 	jsonPayload := map[string]string{
 		"abuser_story": abuse_case,
 	}
@@ -239,7 +239,7 @@ func GetThreatScenario(abuse_case string, config ConfigObj) ThreatScenarioGetRes
 
 //GetTestCase - Generic Function to get TestCases for a given scenario or a specific Test Case
 func GetTestCase(scenario string, config ConfigObj) TestCaseGetResponse {
-	url := fmt.Sprintf("http://%s:%d/test/read", config.host, config.port)
+	url := fmt.Sprintf("http://%s:%d/api/test/read", config.host, config.port)
 	jsonPayload := map[string]string{
 		"scenario": scenario,
 	}

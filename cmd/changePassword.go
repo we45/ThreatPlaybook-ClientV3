@@ -129,7 +129,7 @@ func initiateChangePassword(passChange ChangePassword) {
 	if (ConfigObj{}) == configValue {
 		log.Fatal("Unable to fetch value from cred file")
 	}
-	url := fmt.Sprintf("http://%s:%d/change-password", configValue.host, configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/change-password", configValue.host, configValue.port)
 
 	requestBody, json_err := json.Marshal(map[string]string{
 		"email":           passChange.email,

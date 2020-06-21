@@ -124,7 +124,7 @@ func loadConfiguration(config ConfigObj) {
 		log.Fatal("[-] Unable to generate JSON request")
 	}
 
-	url := fmt.Sprintf("http://%s:%d/login", config.host, config.port)
+	url := fmt.Sprintf("http://%s:%d/api/login", config.host, config.port)
 	resp, httpError := http.Post(url, "application/json", bytes.NewBuffer(requestBody))
 
 	if httpError != nil {

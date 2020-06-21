@@ -75,7 +75,7 @@ func initiateLoginRequest(email string, password string) {
 	if (ConfigObj{}) == configValue {
 		log.Fatal("Unable to fetch value from cred file")
 	}
-	url := fmt.Sprintf("http://%s:%d/login", configValue.host, configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/login", configValue.host, configValue.port)
 
 	requestBody, json_err := json.Marshal(map[string]string{
 		"email":    email,

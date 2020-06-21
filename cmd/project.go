@@ -74,7 +74,7 @@ func createProjectRequest(project string) {
 	if (ConfigObj{}) == configValue {
 		log.Fatal("Unable to fetch value from cred file")
 	}
-	url := fmt.Sprintf("http://%s:%d/project/create", configValue.host, configValue.port)
+	url := fmt.Sprintf("http://%s:%d/api/project/create", configValue.host, configValue.port)
 
 	createProject := ProjectRequest{
 		Name: project,
