@@ -19,7 +19,7 @@ type SecurityTestCase struct {
 
 type ScenarioReference struct {
 	Name     string `yaml:"name"`
-	Severity int32  `yaml:"severity"`
+	Severity int    `yaml:"severity"`
 }
 
 type ThreatScenario struct {
@@ -27,7 +27,7 @@ type ThreatScenario struct {
 	ScenarioType string             `yaml:"type"`
 	Description  string             `yaml:"description"`
 	Vul_name     string             `yaml:"vul_name"`
-	Severity     int32              `yaml:"severity"`
+	Severity     int                `yaml:"severity"`
 	Cwe          int32              `yaml:"cwe"`
 	Reference    ScenarioReference  `yaml:"reference"`
 	Test_cases   []SecurityTestCase `yaml:"test-cases"`
@@ -68,7 +68,7 @@ type ThreatScenarioRequest struct {
 	RepoName     string            `json:"repo_name"`
 	VulName      string            `json:"vul_name"`
 	Cwe          int32             `json:"cwe"`
-	Severity     int32             `json:"severity"`
+	Severity     int               `json:"severity"`
 	TestCases    []TestCaseRequest `json:"test_cases"`
 	Categories   []string          `json:"categories"`
 }

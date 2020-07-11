@@ -48,7 +48,6 @@ abuse_cases:
     - name: upload-malware
       type: inline
       description: I will upload malware as an expense to the system and compromise the application and create a DoS condition
-      type: inline
       vul_name: Malicious File Upload
       severity: 3
       cwe: 434

@@ -305,7 +305,7 @@ func makeThreatScenarios(singleAbuse AbuserStoryCreate) []ThreatScenarioCreate {
 
 		switch single.ScenarioType {
 		case "repo":
-			if single.Reference.Name != "" && single.Reference.Severity > 0 {
+			if single.Reference.Name != "" {
 				tsRequest.ScenarioType = "repo"
 				tsRequest.RepoName = single.Reference.Name
 				tsRequest.Severity = single.Reference.Severity
